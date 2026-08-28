@@ -58,7 +58,7 @@ export default function Navbar() {
   return (
     <>
       <nav className="fixed top-5 left-1/2 -translate-x-1/2 z-100 w-2/3 md:w-1/3 h-15">
-        <div className="relative flex h-full items-center justify-baseline px-4 rounded-2xl border  border-white/30 bg-white/20 shadow-[0_9px_32px_rgba(0,0,0,0.1)] backdrop-blur-lg">
+        <div className="relative flex h-full items-center justify-between px-4 rounded-2xl border  border-white/30 bg-white/20 shadow-[0_9px_32px_rgba(0,0,0,0.1)] backdrop-blur-lg">
           <Link
             href="/"
             onClick={() => setOpen(false)}
