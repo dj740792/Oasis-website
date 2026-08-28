@@ -36,7 +36,7 @@ export const metadata = {
     siteName: "Studio Oasis",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/heroImgs/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Studio Oasis Showcase",
@@ -50,7 +50,7 @@ export const metadata = {
     title: "Studio Oasis",
     description:
       "Modern architectural builds and minimalist spatial environments.",
-    images: ["/og-image.jpg"],
+    images: ["/heroImgs/og-image.jpg"],
   },
   icons: {
     icon: "/favicon.ico",
