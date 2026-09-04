@@ -11,6 +11,7 @@ export const metadata = {
     title: "About Our Studio | studio Oasis",
     description:
       "Learn about Oasis and our approach to quiet architecture, raw textures, and enduring environmental spaces.",
+    images: ["/heroImgs/og-image.jpg"],
   },
 };
 

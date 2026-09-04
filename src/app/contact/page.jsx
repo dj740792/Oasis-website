@@ -8,7 +8,7 @@ export const metadata = {
     title: "Contact studio Oasis",
     description:
       "Partner with us on your next architectural build, interior space, or spatial environment.",
-    images: ["/og-image.jpg"],
+    images: ["/heroImgs/og-image.jpg"],
   },
 };
 

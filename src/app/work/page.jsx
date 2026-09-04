@@ -8,7 +8,7 @@ export const metadata = {
     title: "Selected Works ",
     description:
       "Explore our archive of spatial design, residential builds, and quiet architecture.",
-    images: ["/og-image.jpg"],
+    images: ["/heroImgs/og-image.jpg"],
   },
 };
 

@@ -2,7 +2,7 @@ import { projects } from "@/_data/projects";
 import { notFound } from "next/navigation";
 import ProjectClient from "./ProjectClient";
 
-export async function generateMetada({ params }) {
+export async function generateMetadata({ params }) {
   const { workID } = await params;
   const project = projects.find((p) => p.slug === workID);
 
@@ -19,11 +19,10 @@ export async function generateMetada({ params }) {
     openGraph: {
       title: `${project.title} | Studio Oasis`,
       description:
-        project.description ||
-        `Explore ${project.title} by Studio Oasis`,
+        project.description || `Explore ${project.title} by Studio Oasis`,
       images: [
         {
-          url: project.src ,
+          url: project.src,
           width: 1200,
           height: 630,
           alt: project.title,
