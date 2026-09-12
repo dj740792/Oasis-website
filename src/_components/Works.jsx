@@ -9,7 +9,7 @@ import Image from "next/image";
 import { useRef, useState, useEffect } from "react";
 import Link from "next/link";
 import { Lato } from "next/font/google";
-import { projects } from "@/_data/projects";
+import { projects } from "@/constants";
 const numFont = Lato({ subsets: ["latin"], weight: "400" });
 
 export default function FeaturedProjects() {

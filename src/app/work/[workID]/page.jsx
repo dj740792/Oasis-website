@@ -1,4 +1,4 @@
-import { projects } from "@/_data/projects";
+import { projects } from "@/constants";
 import { notFound } from "next/navigation";
 import ProjectClient from "./ProjectClient";
 

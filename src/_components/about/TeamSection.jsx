@@ -7,51 +7,7 @@ import {
 } from "framer-motion";
 import Image from "next/image";
 import { useRef, useState, useEffect } from "react";
-
-const teamMembers = [
-  {
-    id: "01",
-    name: "Rhea Kapoor",
-    role: "Founder & CEO",
-    src: "/teamImgs/img1.jpg",
-    gridClass: "col-span-12 md:col-span-3 md:col-start-2 md:row-start-1",
-  },
-  {
-    id: "02",
-    name: "Kabir Mehta",
-    role: "Project Director",
-    src: "/teamImgs/img2.jpg",
-    gridClass: "col-span-12 md:col-span-3 md:col-start-7 md:row-start-2",
-  },
-  {
-    id: "03",
-    name: "Aarav Sharma",
-    role: "Principal Designer",
-    src: "/teamImgs/img3.jpg",
-    gridClass: "col-span-12 md:col-span-3 md:col-start-10 md:row-start-2",
-  },
-  {
-    id: "04",
-    name: "Tara Joshi",
-    role: "Structural Engineer",
-    src: "/teamImgs/img4.jpg",
-    gridClass: "col-span-12 md:col-span-3 md:col-start-1 md:row-start-3",
-  },
-  {
-    id: "05",
-    name: "Devansh Verma",
-    role: "CAD Operator",
-    src: "/teamImgs/img5.jpg",
-    gridClass: "col-span-12 md:col-span-3 md:col-start-4 md:row-start-3",
-  },
-  {
-    id: "06",
-    name: "Ananya Iyer",
-    role: "Interior Architect",
-    src: "/teamImgs/img6.jpg",
-    gridClass: "col-span-12 md:col-span-3 md:col-start-7 md:row-start-3",
-  },
-];
+import { teamMembers } from "@/constants";
 
 export default function TeamSection() {
   const [isMobile, setIsMobile] = useState(false);
@@ -124,8 +80,12 @@ function TeamCard({ member, isMobile }) {
         />
       </motion.div>
       <div className="flex justify-between items-center">
-        <p className="text-md md:text-md xl:text-xl  tracking-wide font-semibold">{member.name}</p>
-        <p className="text-sm md:text-sm xl:text-lg tracking-wide font-semibold opacity-70">{member.role}</p>
+        <p className="text-md md:text-md xl:text-xl  tracking-wide font-semibold">
+          {member.name}
+        </p>
+        <p className="text-sm md:text-sm xl:text-lg tracking-wide font-semibold opacity-70">
+          {member.role}
+        </p>
       </div>
     </div>
   );

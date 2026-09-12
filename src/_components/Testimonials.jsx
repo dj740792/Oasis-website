@@ -3,37 +3,7 @@
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-
-const testimonials = [
-  {
-    quote:
-      "They completely changed how our ground floor feels. The spatial flow makes so much more sense now, and the warm wood and plaster tones brought in a lot of calm.",
-    name: "Marcus Vance",
-    role: "Founder, KIN Architecture",
-    avatar: "/testimonialImgs/testiImg1.jpg",
-  },
-  {
-    quote:
-      "They had a clear vision for the lighting and textures right from step one. Execution was smooth and the finished space feels really grounded.",
-    name: "Neha Kapoor",
-    role: "Client, Haus Residence",
-    avatar: "/testimonialImgs/testiImg2.jpg",
-  },
-  {
-    quote:
-      "Super straightforward process from the initial layout sketches to the final site walk-through. They listened to how we actually live and designed around that.",
-    name: "Sienna Miller",
-    role: "Design Director, Form & Flow",
-    avatar: "/testimonialImgs/testiImg3.jpg",
-  },
-  {
-    quote:
-      "The material selections and custom furniture layout turned out great. It's functional, doesn't feel cluttered, and gets endless compliments from guests.",
-    name: "Aarav Mehta",
-    role: "Founder, Apex Offices",
-    avatar: "/testimonialImgs/testiImg4.jpg",
-  },
-];
+import { testimonials } from "@/constants";
 
 export default function Testimonials() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -45,7 +15,6 @@ export default function Testimonials() {
 
     return () => clearInterval(timer);
   }, []);
-
 
   const current = testimonials[currentIndex];
 
@@ -87,7 +56,7 @@ export default function Testimonials() {
 
                 <div className="flex items-center gap-4">
                   <div className="relative w-12 h-12 rounded-sm overflow-hidden bg-zinc-200 shrink-0">
-                   <Image
+                    <Image
                       src={current.avatar}
                       alt={current.name}
                       fill

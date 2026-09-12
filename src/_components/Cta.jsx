@@ -4,39 +4,7 @@ import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
-
-const images = [
-  {
-    src: "/ctaImgs/ctaImg1.jpg",
-    className: "top-[6%] left-[12%] w-[12vw] h-[12vw] max-w-[150px] max-h-[150px]",
-    yRange: ["0px", "100px"],
-  },
-  {
-    src: "/ctaImgs/ctaImg2.jpg",
-    className: "top-[4%] right-[10%] w-[14vw] h-[14vw] max-w-[180px] max-h-[180px]",
-    yRange: ["0px", "200px"],
-  },
-  {
-    src: "/ctaImgs/ctaImg5.jpg",
-    className: "top-[38%] left-[4%] w-[11vw] h-[11vw] max-w-[140px] max-h-[140px]",
-    yRange: ["0px", "200px"],
-  },
-  {
-    src: "/ctaImgs/ctaImg3.jpg",
-    className: "top-[58%] right-[8%] w-[13vw] h-[13vw] max-w-[160px] max-h-[160px]",
-    yRange: ["0px", "-100px"],
-  },
-  {
-    src: "/ctaImgs/ctaImg4.jpg",
-    className: "bottom-[6%] left-[24%] w-[13vw] h-[13vw] max-w-[160px] max-h-[160px]",
-    yRange: ["0px", "-200px"],
-  },
-  {
-    src: "/ctaImgs/ctaImg6.jpg",
-    className: "bottom-[2%] left-[50%] -translate-x-1/2 w-[11vw] h-[11vw] max-w-[130px] max-h-[130px]",
-    yRange: ["0px", "-100px"],
-  },
-];
+import { ctaImages, ctaLines } from "@/constants";
 
 function FloatingCard({ img, scrollYProgress }) {
   const y = useTransform(scrollYProgress, [0, 1], img.yRange);
@@ -67,25 +35,14 @@ export default function Cta({ text = "Tell us your story" }) {
     offset: ["start end", "end start"],
   });
 
-  const lines = [
-    "LET'S MAKE",
-    "SOMETHING REAL.",
-    "YOUR VISION.",
-    "OUR DIRECTION.",
-  ];
-
   return (
     <section
       ref={containerRef}
       className="relative w-full min-h-screen h-[105vh] flex flex-col items-center justify-between py-28 md:py-36 overflow-hidden"
     >
       <div className="absolute inset-0 pointer-events-none block">
-        {images.map((img, idx) => (
-          <FloatingCard
-            key={idx}
-            img={img}
-            scrollYProgress={scrollYProgress}
-          />
+        {ctaImages.map((img, idx) => (
+          <FloatingCard key={idx} img={img} scrollYProgress={scrollYProgress} />
         ))}
       </div>
 
@@ -94,7 +51,7 @@ export default function Cta({ text = "Tell us your story" }) {
         className="relative z-10 w-full text-center mt-15 md:mt-8 lg:mt-18 overflow-hidden"
       >
         <h1 className="flex flex-col items-center tracking-normal lg:tracking-wide leading-[1.1] lg:leading-[0.9] select-none whitespace-nowrap text-[10vw] md:text-[5vw] md:mx-8">
-          {lines.map((line, lineIndex) => (
+          {ctaLines.map((line, lineIndex) => (
             <div key={lineIndex} className="overflow-hidden">
               {line.split("").map((letter, letterIndex) => (
                 <motion.span

@@ -3,25 +3,13 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
-import {
-  Fjalla_One,
-} from "next/font/google";
+import { Fjalla_One } from "next/font/google";
+import { heroImages } from "@/constants";
 
 const lexend = Fjalla_One({
   subsets: ["latin"],
   weight: "400",
 });
-
-const images = [
-  { src: "/heroImgs/img1.jpg", height: "h-[40vh] md:h-[30vh]" },
-  { src: "/photos/restraunt/restraunt2.jpg", height: "h-[36vh] md:h-[26vh]" },
-  { src: "/photos/lounge/lounge3.jpg", height: "h-[32vh] md:h-[32vh]" },
-  { src: "/heroImgs/img9.jpg", height: "h-[39vh] md:h-[29vh]" },
-  { src: "/photos/pavillion/pavillion1.jpg", height: "h-[37vh] md:h-[27vh]" },
-  { src: "/heroImgs/img6.jpg", height: "h-[32vh] md:h-[32vh]" },
-  { src: "/heroImgs/img7.jpg", height: "h-[39vh] md:h-[29vh]" },
-  { src: "/photos/villa/villa3.jpg", height: "h-[37vh] md:h-[27vh]" },
-];
 
 const Hero = () => {
   const sectionRef = useRef(null);
@@ -40,7 +28,7 @@ const Hero = () => {
   }, []);
 
   const logo = "OASIS.";
-  const duplicatedImages = [...images, ...images];
+  const duplicatedImages = [...heroImages, ...heroImages];
 
   return (
     <section

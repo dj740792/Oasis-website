@@ -2,31 +2,9 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import { useRef, useEffect, useState } from "react";
+import { serviceList } from "@/constants";
 
 export default function Services() {
- const serviceList = [
-  {
-    title: "Building & Site Design",
-    description:
-      "Planning and designing complete structures from the ground up, tailored to the land and surroundings.",
-  },
-  {
-    title: "Interior Design & Renovation",
-    description:
-      "Transforming indoor layouts, finishes, and features for homes, offices, and retail spaces.",
-  },
-  {
-    title: "Furniture & Decor Styling",
-    description:
-      "Selecting custom furniture, lighting, artwork, and materials to complete the look of your space.",
-  },
-  {
-    title: "Project Guidance & Supervision",
-    description:
-      "Overseeing site progress, coordinating contractors, and ensuring design details.",
-  },
-];
-
   const ref = useRef(null);
   const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
@@ -120,5 +98,5 @@ export default function Services() {
         </div>
       </div>
     </section>
-  ); 
+  );
 }

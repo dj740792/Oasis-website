@@ -1,4 +1,4 @@
-import { projects } from "@/_data/projects";
+import { projects } from "@/constants";
 
 export default async function sitemap() {
   const baseUrl = "https://studio-oasis.com";

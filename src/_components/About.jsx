@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { useInView } from "framer-motion";
 import Link from "next/link";
 import { ArrowUpRight, X } from "lucide-react";
+import { aboutContent } from "@/constants";
 
 const textContainerVariants = {
   hidden: { opacity: 1 },
@@ -35,11 +36,8 @@ export default function About() {
 
   const isInView = useInView(headingRef, { once: true, amount: 0.3 });
 
-  const heading =
-    "We design atmospheres, not just buildings. Our work is defined by material honesty and a deep respect for nature.";
+  const { heading, paragraph } = aboutContent;
   const headingWords = heading.split(/\s+/);
-  const paragraph =
-    "In a world overwhelmed by noise, we believe in the power of quiet architecture. Raw textures, sun-washed surfaces, and sculptural geometry create calm environments that feel thoughtful, elevated, and enduring. Every great build begins with understanding.";
   const paragraphWords = paragraph.split(/\s+/);
 
   const handleOpenVideo = () => {
@@ -129,7 +127,6 @@ export default function About() {
               <video
                 src="/video/about.mp4"
                 preload="none"
-
                 loop
                 autoPlay
                 muted
@@ -139,7 +136,9 @@ export default function About() {
             </div>
             <div className="flex justify-between items-center w-full pt-3 text-md uppercase tracking-widest">
               <p className="font-semibold text-xs md:text-md">showcase reel</p>
-              <p className="font-semibold text-xs md:text-md opacity-70">2026</p>
+              <p className="font-semibold text-xs md:text-md opacity-70">
+                2026
+              </p>
             </div>
           </motion.div>
         </div>

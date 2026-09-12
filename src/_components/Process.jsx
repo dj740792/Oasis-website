@@ -1,81 +1,61 @@
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
-
+import { processSteps } from "@/constants";
 
 export default function Process() {
-  const services = [
-    {
-      num: "01",
-      title: "Understanding You",
-      desc: "Our process begins with deep listening. We interpret lifestyle, emotion, and spatial flow.",
-      icon: (
-        <svg
-          viewBox="0 0 64 64"
-          fill="none"
-          stroke="currentColor"
-          className="w-16 h-16 lg:w-20 lg:h-20 xl:w-24 xl:h-24 text-[#f8eee9]/90 stroke-[2.2]"
-        >
-          <circle cx="32" cy="32" r="8" />
-          <path d="M32 16a16 16 0 0 1 16 16" strokeLinecap="round" />
-          <path d="M32 8a24 24 0 0 1 24 24" strokeLinecap="round" />
-          <path d="M32 24a8 8 0 0 0-8 8" strokeLinecap="round" />
-        </svg>
-      ),
-    },
-    {
-      num: "02",
-      title: "Design Concept",
-      desc: "Every line, color, and proportion reflects a story - balanced between function and feeling.",
-      icon: (
-        <svg
-          viewBox="0 0 64 64"
-          fill="none"
-          stroke="currentColor"
-          className="w-16 h-16 lg:w-20 lg:h-20 xl:w-24 xl:h-24 text-[#f8eee9]/90 stroke-[2.2]"
-        >
-          <path d="M32 12L50 22V42L32 52L14 42V22L32 12Z" />
-          <path d="M32 12V52" />
-          <path d="M50 22L14 42" />
-          <path d="M14 22L50 42" />
-        </svg>
-      ),
-    },
-    {
-      num: "03",
-      title: "Material & Furniture Curation",
-      desc: "We curate textures and finishes that define atmosphere and character.",
-      icon: (
-        <svg
-          viewBox="0 0 64 64"
-          fill="none"
-          stroke="currentColor"
-          className="w-16 h-16 lg:w-20 lg:h-20 xl:w-24 xl:h-24 text-[#f8eee9]/90 stroke-[2.2]"
-        >
-          <path d="M32 12L52 22L32 32L12 22L32 12Z" />
-          <path d="M12 32L32 42L52 32" />
-          <path d="M12 42L32 52L52 42" />
-        </svg>
-      ),
-    },
-    {
-      num: "04",
-      title: "Execution & Refinement",
-      desc: "We supervise with focus to ensure the spaces mirror the design narrative.",
-      icon: (
-        <svg
-          viewBox="0 0 64 64"
-          fill="none"
-          stroke="currentColor"
-          className="w-16 h-16 lg:w-20 lg:h-20 xl:w-24 xl:h-24 text-[#f8eee9]/90 stroke-[2.2]"
-        >
-          <rect x="12" y="12" width="40" height="40" rx="2" />
-          <path d="M12 28h40" />
-          <path d="M28 28v24" />
-          <path d="M40 12v16" />
-        </svg>
-      ),
-    },
+  const icons = [
+    <svg
+      key="orbit"
+      viewBox="0 0 64 64"
+      fill="none"
+      stroke="currentColor"
+      className="w-16 h-16 lg:w-20 lg:h-20 xl:w-24 xl:h-24 text-[#f8eee9]/90 stroke-[2.2]"
+    >
+      <circle cx="32" cy="32" r="8" />
+      <path d="M32 16a16 16 0 0 1 16 16" strokeLinecap="round" />
+      <path d="M32 8a24 24 0 0 1 24 24" strokeLinecap="round" />
+      <path d="M32 24a8 8 0 0 0-8 8" strokeLinecap="round" />
+    </svg>,
+    <svg
+      key="cube"
+      viewBox="0 0 64 64"
+      fill="none"
+      stroke="currentColor"
+      className="w-16 h-16 lg:w-20 lg:h-20 xl:w-24 xl:h-24 text-[#f8eee9]/90 stroke-[2.2]"
+    >
+      <path d="M32 12L50 22V42L32 52L14 42V22L32 12Z" />
+      <path d="M32 12V52" />
+      <path d="M50 22L14 42" />
+      <path d="M14 22L50 42" />
+    </svg>,
+    <svg
+      key="layers"
+      viewBox="0 0 64 64"
+      fill="none"
+      stroke="currentColor"
+      className="w-16 h-16 lg:w-20 lg:h-20 xl:w-24 xl:h-24 text-[#f8eee9]/90 stroke-[2.2]"
+    >
+      <path d="M32 12L52 22L32 32L12 22L32 12Z" />
+      <path d="M12 32L32 42L52 32" />
+      <path d="M12 42L32 52L52 42" />
+    </svg>,
+    <svg
+      key="grid"
+      viewBox="0 0 64 64"
+      fill="none"
+      stroke="currentColor"
+      className="w-16 h-16 lg:w-20 lg:h-20 xl:w-24 xl:h-24 text-[#f8eee9]/90 stroke-[2.2]"
+    >
+      <rect x="12" y="12" width="40" height="40" rx="2" />
+      <path d="M12 28h40" />
+      <path d="M28 28v24" />
+      <path d="M40 12v16" />
+    </svg>,
   ];
+  const services = processSteps.map((step, index) => ({
+    ...step,
+    icon: icons[index],
+  }));
 
   const targetRef = useRef(null);
 
@@ -101,9 +81,8 @@ export default function Process() {
           <div className="w-[55vw] md:w-[30vw] flex-none flex flex-col h-[60vh] pr-6">
             <div className="flex flex-col gap-10">
               <h2 className="text-[clamp(2.5rem,6vw,3.5rem)] font-semibold tracking-tight leading-none uppercase">
-                Our process <br />of forming spaces
-                
-              
+                Our process <br />
+                of forming spaces
               </h2>
               <p className="w-full text-sm md:text-md lg:text-lg xl:text-xl leading-relaxed text-[#483b35]">
                 From initial vision to final detail, we approach each step with
@@ -135,7 +114,7 @@ function ProjectCard({ service, index, total, smoothProgress }) {
   const scale = useTransform(
     smoothProgress,
     [start - 0.2, start + 0.05],
-    [0.94, 1]
+    [0.94, 1],
   );
 
   return (

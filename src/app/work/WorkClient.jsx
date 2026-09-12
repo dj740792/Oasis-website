@@ -3,7 +3,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { Fjalla_One, Lato } from "next/font/google";
 import { useState, useRef, useEffect } from "react";
-import { projects } from "@/_data/projects";
+import { projects } from "@/constants";
 import Image from "next/image";
 
 const numFont = Lato({ subsets: ["latin"], weight: "400" });
@@ -12,8 +12,6 @@ const lexend = Fjalla_One({
   subsets: ["latin"],
   weight: "400",
 });
-
-
 
 export default function WorkClient() {
   const [mounted, setMounted] = useState(false);
@@ -58,7 +56,8 @@ export default function WorkClient() {
             ))}
           </h1>
           <p className="text-md md:text-lg xl:text-xl font-normal leading-relaxed max-w-xl opacity-80">
-           A selection of spaces shaped around material, atmosphere and the way people experience them.
+            A selection of spaces shaped around material, atmosphere and the way
+            people experience them.
           </p>
         </div>
 
@@ -100,7 +99,6 @@ export default function WorkClient() {
           ))}
         </div>
       </motion.div>
-      
     </section>
   );
 }

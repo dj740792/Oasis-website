@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { useRef, useState, useEffect } from "react";
 import { Fjalla_One } from "next/font/google";
+import { aboutContent } from "@/constants";
 
 const lexend = Fjalla_One({
   subsets: ["latin"],
@@ -54,7 +55,6 @@ const wordVariants = {
   },
 };
 
-
 export default function HeroSection() {
   const [mounted, setMounted] = useState(false);
 
@@ -65,18 +65,8 @@ export default function HeroSection() {
   const logo = "Our Journey";
   const containerRef = useRef(null);
 
-  const text1 =
-    "We began with a simple question: how does a structure make you feel? From that first line on paper to the final monolith standing against the sky, OASIS was created to weave geometry with emotion. We build spaces that breathe, endure, and offer a permanent sense of place.";
-  const text2 =
-    "Founded in 2022 in New Delhi, OASIS creates warm, modern spaces where clean design meets everyday comfort.";
-
-  const card1Heading = ["Shared", "Passion.", "Collective", "Precision."];
-  const card1Text =
-    "Great architecture isn't made by isolated blueprints—it's built through deep personal trust. Our studio functions like a family, where candid dialogue, shared curiosity, and genuine human connection directly shape every space we design";
-
-  const card2Heading = ["Our", "Mission"];
-  const card2Text =
-    "To craft human-centered environments that balance clarity, warmth, and climate responsibility—leaving a permanent sense of place";
+  const { text1, text2, card1Heading, card1Text, card2Heading, card2Text } =
+    aboutContent.journey;
 
   const text1Words = text1.split(" ");
   const text2Words = text2.split(" ");

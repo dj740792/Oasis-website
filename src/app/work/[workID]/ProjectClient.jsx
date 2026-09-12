@@ -7,7 +7,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Lato } from "next/font/google";
 import { ArrowLeft } from "lucide-react";
-import { projects } from "@/_data/projects";
+import { projects } from "@/constants";
 
 const numFont = Lato({ subsets: ["latin"], weight: "400" });
 

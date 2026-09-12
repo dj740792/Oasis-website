@@ -4,34 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUpRight, Plus } from "lucide-react";
 import Link from "next/link";
-
-const faqs = [
-  {
-    id: "01",
-    question:
-      "What types of architectural and interior design projects do you handle?",
-    answer:
-      "We specialize in high-end residential homes, boutique hospitality spaces, commercial studio headquarters, and tailored interior renovations. We focus on projects that prioritize architectural clarity, warm modernism, and climate responsiveness.",
-  },
-  {
-    id: "02",
-    question: "How involved is the OASIS team during the construction phase?",
-    answer:
-      "We stay fully engaged from the initial concept sketch to final handover. Our studio provides comprehensive site supervision, contractor coordination, and material quality checks to ensure our precise geometric details translate seamlessly into reality.",
-  },
-  {
-    id: "03",
-    question: "Where are your studio's primary projects located?",
-    answer:
-      "While our main studio is based in New Delhi, we design and execute residential and boutique commercial projects across the Delhi-NCR region, as well as select destination projects across India.",
-  },
-  {
-    id: "04",
-    question: "How do we initiate a project with OASIS Studio?",
-    answer:
-      "You can start by sharing your project details, site location, and timeline through our contact form. We then schedule an initial discovery consultation to discuss your vision, spatial requirements, and design scope.",
-  },
-];
+import { faqs } from "@/constants";
 
 export default function FaqSection({ text = "Let's Connect" }) {
   const [openId, setOpenId] = useState(null);
@@ -139,7 +112,7 @@ export default function FaqSection({ text = "Let's Connect" }) {
             </motion.div>
           </div>
         </div>
-       
+
         <div className="w-full md:w-1/2 flex flex-col divide-y border-b ">
           {faqs.map((faq) => {
             const isOpen = openId === faq.id;

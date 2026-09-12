@@ -4,26 +4,12 @@ import Link from "next/link";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Fjalla_One } from "next/font/google";
+import { navigationLinks } from "@/constants";
 
 const fjalla = Fjalla_One({
   subsets: ["latin"],
   weight: "400",
 });
-
-const links = [
-  {
-    url: "/about",
-    title: "About",
-  },
-  {
-    url: "/work",
-    title: "Works",
-  },
-  {
-    url: "/contact",
-    title: "Contact",
-  },
-];
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -147,7 +133,7 @@ export default function Navbar() {
                 animate="opened"
                 className="group/links flex flex-col items-center gap-4"
               >
-                {links.map((link) => (
+                {navigationLinks.map((link) => (
                   <motion.div
                     key={link.title}
                     variants={menuLink}

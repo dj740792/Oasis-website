@@ -3,31 +3,9 @@ import { Lato } from "next/font/google";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import React, { useRef } from "react";
+import { brands, stats } from "@/constants";
 
 const numFont = Lato({ subsets: ["latin"], weight: "400" });
-const stats = [
-  {
-    id: "01",
-    value: "200+",
-    label: "Executed Projects",
-    description:
-      "From initial concept sketches to monolith structural completion.",
-  },
-  {
-    id: "02",
-    value: "89%",
-    label: "Client Retention",
-    description:
-      "Long-term architectural partnerships built on execution and trust.",
-  },
-  {
-    id: "03",
-    value: "30+",
-    label: "Cities Covered",
-    description: "Expanding our design footprint across international borders.",
-  },
-];
-
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -49,15 +27,6 @@ const cardVariants = {
     },
   },
 };
-
-const brands = [
-  { name: "Fujifilm", src: "/brandSvgs/fujifilm.svg" },
-  { name: "Fujitsu", src: "/brandSvgs/fujitsu.svg" },
-  { name: "Plotly", src: "/brandSvgs/plotly.svg" },
-  { name: "Blackmagic Design", src: "/brandSvgs/blackmagicdesign.svg" },
-  { name: "Blackmagic Design", src: "/brandSvgs/4d.svg" },
-  { name: "Blackmagic Design", src: "/brandSvgs/justeat.svg" },
-];
 
 export default function StatsSection() {
   const containerRef = useRef(null);
@@ -103,7 +72,9 @@ export default function StatsSection() {
             className="col-span-12 md:col-span-4 border-l md:border-l-2 xl:border-l-3 pl-4 md:pl-8 flex flex-col justify-between"
           >
             <div>
-              <p className={`text-3xl lg:text-5xl xl:text-7xl font-black tracking-wide leading-none mb-3 md:mb-4 ${numFont.className}`}>
+              <p
+                className={`text-3xl lg:text-5xl xl:text-7xl font-black tracking-wide leading-none mb-3 md:mb-4 ${numFont.className}`}
+              >
                 {stat.value}
               </p>
               <p className="text-xl lg:text-3xl font-bold tracking-wide uppercase mb-2 md:mb-3">
@@ -125,7 +96,8 @@ export default function StatsSection() {
             </h2>
           </div>
           <p className="text-md lg:text-lg xl:text-2xl font-semibold max-w-xl leading-relaxed opacity-80">
-            Trusted by some of the region's most recognised names across real estate, hospitality, retail, and public design.
+            Trusted by some of the region's most recognised names across real
+            estate, hospitality, retail, and public design.
           </p>
         </div>
 
