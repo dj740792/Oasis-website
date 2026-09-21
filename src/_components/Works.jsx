@@ -26,14 +26,14 @@ export default function FeaturedProjects() {
   }, []);
 
   return (
-    <section className="w-full  px-4 md:px-8 py-32 ">
+    <section className="w-full  px-4 md:px-8 py-22 ">
       <div className="flex justify-between items-baseline mb-10  pb-8">
         <h2 className="text-4xl md:text-7xl font-semibold tracking-tight">
           Featured Projects
         </h2>
         <Link
           href="/work"
-          className="text-[10px] md:text-sm xl:text-lg font-semibold tracking-widest uppercase"
+          className="text-[12px] md:text-sm xl:text-lg font-semibold tracking-widest uppercase"
         >
           See more works
         </Link>

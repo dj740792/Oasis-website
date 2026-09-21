@@ -419,3 +419,35 @@ export const aboutContent = {
       "To craft human-centered environments that balance clarity, warmth, and climate responsibility—leaving a permanent sense of place",
   },
 };
+
+export const worksData = [
+  {
+    id: "01",
+    title: "La Bicicleta",
+    img: "/WorksSrc/work1.jpg",
+    video: "/WorksSrc/workVid1.mp4",
+
+    type: "Music Video",
+  },
+  {
+    id: "02",
+    title: "Nightlife in Chongqing",
+    img: "/WorksSrc/Work2.png",
+    video: "/WorksSrc/workVid2.mp4",
+    type: "Documentary",
+  },
+  {
+    id: "03",
+    title: "Cindy Era tour",
+    img: "/WorksSrc/work3.png",
+    video: "/WorksSrc/workVid3.mp4",
+    type: "Music Video",
+  },
+  {
+    id: "04",
+    title: "Great Ideas",
+    img: "/WorksSrc/work4.jpg",
+    video: "/WorksSrc/workVid4.mp4",
+    type: "Short film",
+  },
+];

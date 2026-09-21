@@ -84,7 +84,7 @@ export default function Process() {
                 Our process <br />
                 of forming spaces
               </h2>
-              <p className="w-full text-sm md:text-md lg:text-lg xl:text-xl leading-relaxed text-[#483b35]">
+              <p className="w-full text-md lg:text-lg xl:text-xl leading-relaxed text-[#483b35]">
                 From initial vision to final detail, we approach each step with
                 precision, collaboration, and calm intention.
               </p>

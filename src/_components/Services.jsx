@@ -43,7 +43,7 @@ export default function Services() {
             Transforming quiet ideas into physical presence.
           </motion.h2>
 
-          <p className="text-sm lg:text-lg xl:text-xl text-[#695349] font-semibold leading-relaxed max-w-md">
+          <p className="text-md lg:text-lg xl:text-xl text-[#695349] font-semibold leading-relaxed max-w-md">
             Our mission is to translate your ambition into tangible spaces. We
             offer a range of specialized spatial design services tailored to
             craft your unique environment.
@@ -89,7 +89,7 @@ export default function Services() {
                 <h3 className="text-xl  lg:text-3xl font-semibold tracking-normal  transition-colors">
                   {service.title}
                 </h3>
-                <p className="text-sm lg:text-lg opacity-80 font-semibold leading-relaxed max-w-md">
+                <p className="text-md lg:text-lg opacity-80 font-semibold leading-relaxed max-w-md">
                   {service.description}
                 </p>
               </motion.div>

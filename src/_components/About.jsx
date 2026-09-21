@@ -59,12 +59,12 @@ export default function About() {
 
   return (
     <section className="w-full min-h-screen flex items-center justify-center py-16 px-4">
-      <motion.div className="w-full flex flex-col gap-12 mt-32 mb-40 md:mt-0">
+      <motion.div className="w-full flex flex-col gap-12 mt-20 mb-20 md:mt-0">
         <div
           ref={headingRef}
           className="md:max-w-7xl leading-[1.3] md:px-12 overflow-hidden"
         >
-          <motion.h2 className="lg:text-6xl md:text-5xl text-3xl font-bold tracking-wider leading-none flex flex-wrap gap-y-1">
+          <motion.h2 className="lg:text-6xl md:text-5xl text-2xl font-bold tracking-wider leading-none flex flex-wrap gap-y-1">
             {headingWords.map((word, wordIndex) => (
               <span
                 key={wordIndex}
@@ -97,7 +97,7 @@ export default function About() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-50px" }}
-              className="text-lg md:text-lg xl:text-xl 2xl:text-2xl leading-8 tracking-wide font-bold opacity-90 flex flex-wrap gap-x-[0.25em] gap-y-1"
+              className="text-md md:text-lg xl:text-xl 2xl:text-2xl leading-8 tracking-wide font-bold opacity-90 flex flex-wrap gap-x-[0.25em] gap-y-1"
             >
               {paragraphWords.map((word, wordIndex) => (
                 <span key={wordIndex} className="inline-flex overflow-hidden">
