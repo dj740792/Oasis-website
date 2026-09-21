@@ -9,14 +9,14 @@ const numFont = Lato({ subsets: ["latin"], weight: "400" });
 export default function Footer() {
   return (
     <footer className="w-full p-4 sm:p-6 md:p-8  ">
-      <div className="w-full bg-[#361e13] text-[#f8eee9] p-8 md:p-2 flex flex-col justify-between min-h-[80vh] rounded-xl ">
+      <div className="w-full shrink-0 bg-[#361e13] text-[#f8eee9] p-8 md:p-2 pb-12 md:pb-2 flex flex-col justify-between min-h-[80vh] h-auto rounded-xl">
         <div className="justify-center flex ">
           <h1 className="text-[25vw] lg:text-[24vw] xl:text-[20vw] leading-none font-bold  tracking-wide uppercase select-none  opacity-90">
             OASIS.
           </h1>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start md:p-12">
-          <div className="md:col-span-5 space-y-6 ">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start lg:p-12">
+          <div className="lg:col-span-4 space-y-6 ">
             <p className="text-2xl md:text-2xl font-light leading-snug 2xl:text-3xl">
               We shape spaces that
               <br />
@@ -36,7 +36,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="md:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-12 ">
+          <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-12">
             <div className="space-y-2 ">
               <p>
                 <Link

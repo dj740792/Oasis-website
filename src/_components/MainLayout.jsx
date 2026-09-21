@@ -11,16 +11,17 @@ export default function MainLayout({ children }) {
 
   return (
     <SmoothScroll>
-
       <header className="fixed top-0 left-0 w-full z-50 pointer-events-none flex justify-center pt-4 px-4">
         <div className="pointer-events-auto w-full flex justify-center">
           <Navbar />
         </div>
       </header>
 
-      <main className="w-full grow">{children}</main>
+      <div className="flex min-h-screen w-full flex-col">
+        <main className="w-full grow">{children}</main>
 
-      {!isContactPage && <Footer />}
+        {!isContactPage && <Footer />}
+      </div>
     </SmoothScroll>
   );
 }
