@@ -76,7 +76,7 @@ const Hero = () => {
       <div className="relative w-full flex overflow-hidden pb-10 mask-gradient">
         {mounted && (
           <motion.div
-            className="flex gap-2 shrink-0 pr-6 items-end"
+            className="flex shrink-0 items-end gap-2 pr-6"
             animate={{ x: [0, "-50%"] }}
             transition={{
               ease: "linear",
@@ -86,16 +86,16 @@ const Hero = () => {
           >
             {duplicatedImages.map((img, index) => (
               <div
-                key={index}
-                className={`relative shrink-0 w-55 md:w-55 overflow-hidden ${img.height}`}
+                key={`${img.src}-${index}`}
+                className={`relative shrink-0 w-56 overflow-hidden md:w-60 ${img.height}`}
               >
                 <Image
                   src={img.src}
                   alt="Studio Oasis interior layout creation"
                   fill
-                  sizes="(max-w-768px) 280px, 340px"
-                  priority={index < 5}
-                  className="object-cover select-none pointer-events-none"
+                  sizes="(max-width: 768px) 14rem, 15rem"
+                  loading="eager"
+                  className="h-full w-full object-cover select-none pointer-events-none"
                 />
               </div>
             ))}

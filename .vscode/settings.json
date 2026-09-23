@@ -1,0 +1,5 @@
+{
+    "files.associations": {
+        "**/node_modules/next/dist/docs/**/*.md": "plaintext"
+    }
+}

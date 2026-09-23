@@ -25,7 +25,7 @@ export default function Services() {
   const height = useTransform(
     scrollYProgress,
     [0, 0.5],
-    isMobile ? ["0vh", "60vh"] : ["0vh", "90vh"],
+    isMobile ? ["60vh", "80vh"] : ["60vh", "90vh"],
   );
 
   return (
