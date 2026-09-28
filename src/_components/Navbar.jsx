@@ -1,8 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { useRef, useState } from "react";
+import {
+  AnimatePresence,
+  motion,
+  useMotionValueEvent,
+  useScroll,
+} from "framer-motion";
 import { Fjalla_One } from "next/font/google";
 import { navigationLinks } from "@/constants";
 
@@ -19,6 +24,23 @@ const navigationLabels = {
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [hidden, setHidden] = useState(false);
+  const lastScrollY = useRef(0);
+  const { scrollY } = useScroll();
+
+  useMotionValueEvent(scrollY, "change", (current) => {
+    if (current <= 80) {
+      setHidden(false);
+      lastScrollY.current = current;
+      return;
+    }
+
+    const delta = current - lastScrollY.current;
+    if (Math.abs(delta) >= 4) {
+      setHidden(delta > 0);
+      lastScrollY.current = current;
+    }
+  });
 
   const menuLinks = {
     closed: {
@@ -49,7 +71,12 @@ export default function Navbar() {
   };
   return (
     <>
-      <nav className="fixed left-1/2 top-5 z-100 h-15 w-[calc(100%-2rem)] max-w-7xl -translate-x-1/2">
+      <motion.nav
+        initial={false}
+        animate={{ y: hidden && !open ? "-150%" : "0%" }}
+        transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+        className="fixed left-1/2 top-5 z-100 h-15 w-[calc(100%-2rem)] max-w-7xl -translate-x-1/2"
+      >
         <div className="relative flex h-full items-center justify-between rounded-2xl border border-white/30 bg-white/20 px-4 shadow-[0_9px_32px_rgba(0,0,0,0.1)] backdrop-blur-lg lg:rounded-none lg:border-0 lg:bg-transparent lg:shadow-none lg:backdrop-blur-none">
           <Link
             href="/"
@@ -126,7 +153,6 @@ export default function Navbar() {
               transition={{ duration: 0.22, ease: "easeOut" }}
               className="absolute right-0 top-[calc(100%+0.75rem)] z-90 w-[min(42rem,calc(60vw-3rem))] md:w-[min(42rem,calc(40vw-3rem))] overflow-hidden border border-[#272321] shadow-xl lg:hidden"
             >
-             
               <motion.div
                 variants={menuLinks}
                 initial="closed"
@@ -152,7 +178,7 @@ export default function Navbar() {
             </motion.div>
           )}
         </AnimatePresence>
-      </nav>
+      </motion.nav>
     </>
   );
 }

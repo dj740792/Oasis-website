@@ -72,13 +72,16 @@ export default function Process() {
   const x = useTransform(smoothProgress, [0, 1], ["1%", "-60%"]);
 
   return (
-    <section ref={targetRef} className="relative h-[500vh] md:py-12">
+    <section
+      ref={targetRef}
+      className="relative h-[700vh] md:h-[500vh] md:py-12"
+    >
       <div className="sticky top-0 flex h-screen items-center overflow-hidden">
         <motion.div
           style={{ x }}
           className="flex items-center gap-12 md:gap-16 pl-6 md:pl-12 "
         >
-          <div className="w-[55vw] md:w-[30vw] flex-none flex flex-col h-[60vh] pr-6">
+          <div className="flex h-[42vh] w-[55vw] flex-none flex-col pr-6 lg:h-[45vh] xl:h-[55vh] md:w-[30vw]">
             <div className="flex flex-col gap-10">
               <h2 className="text-[clamp(2.5rem,6vw,3.5rem)] font-semibold tracking-tight leading-none uppercase">
                 Our process <br />

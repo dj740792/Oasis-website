@@ -44,7 +44,7 @@ const Hero = () => {
               scale: logoScale,
               transform: "none",
             }}
-            className={`relative text-center select-none whitespace-nowrap text-[38vw] leading-none  drop-shadow-md md:text-[16vw] lg:text-[20vw] ${fjalla.className}`}
+            className={`relative text-center select-none whitespace-nowrap text-[38vw] leading-none drop-shadow-md md:text-[24vw] lg:text-[20vw] ${fjalla.className}`}
           >
             OASIS
           </motion.h1>
