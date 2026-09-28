@@ -18,6 +18,7 @@ const Hero = () => {
 
   const logoY = useTransform(scrollYProgress, [0, 1], ["0%", "-110%"]);
   const logoScale = useTransform(scrollYProgress, [0, 1], [1, 0.92]);
+  const subHeadY = useTransform(scrollYProgress, [0, 1], ["0%", "-110%"]);
 
   return (
     <section
@@ -47,10 +48,17 @@ const Hero = () => {
           >
             OASIS
           </motion.h1>
-          <h2 className=" text-lg lg:text-2xl text-center max-w-2xl">
+          <motion.h2
+            style={{
+              y: subHeadY,
+              scale: logoScale,
+              transform: "none",
+            }}
+            className=" text-lg lg:text-2xl text-center max-w-2xl"
+          >
             Designing spaces that tell your unique story. Beautifully crafted,
             tailored for life.
-          </h2>
+          </motion.h2>
         </div>
       </div>
     </section>

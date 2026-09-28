@@ -403,9 +403,7 @@ export const footerLinks = [
 
 export const aboutContent = {
   heading:
-    "We design atmospheres, not just buildings. Our work is defined by material honesty and a deep respect for nature.",
-  paragraph:
-    "In a world overwhelmed by noise, we believe in the power of quiet architecture. Raw textures, sun-washed surfaces, and sculptural geometry create calm environments that feel thoughtful, elevated, and enduring. Every great build begins with understanding.",
+    "We design atmospheres, not just buildings. Our work is defined by material honesty and a deep respect for nature. We bring your dream spaces to life.",
   journey: {
     text1:
       "We began with a simple question: how does a structure make you feel? From that first line on paper to the final monolith standing against the sky, OASIS was created to weave geometry with emotion. We build spaces that breathe, endure, and offer a permanent sense of place.",
@@ -413,7 +411,7 @@ export const aboutContent = {
       "Founded in 2022 in New Delhi, OASIS creates warm, modern spaces where clean design meets everyday comfort.",
     card1Heading: ["Shared", "Passion.", "Collective", "Precision."],
     card1Text:
-      "Great architecture isn't made by isolated blueprints—it’s built through deep personal trust. Our studio functions like a family, where candid dialogue, shared curiosity, and genuine human connection directly shape every space we design",
+      "Great architecture isn't made by isolated blueprints—it's built through deep personal trust. Our studio functions like a family, where candid dialogue, shared curiosity, and genuine human connection directly shape every space we design",
     card2Heading: ["Our", "Mission"],
     card2Text:
       "To craft human-centered environments that balance clarity, warmth, and climate responsibility—leaving a permanent sense of place",
