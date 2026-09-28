@@ -11,6 +11,12 @@ const fjalla = Fjalla_One({
   weight: "400",
 });
 
+const navigationLabels = {
+  About: "About Us",
+  Works: "Projects",
+  Contact: "Contact Us",
+};
+
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
@@ -43,23 +49,32 @@ export default function Navbar() {
   };
   return (
     <>
-      <nav className="fixed top-5 left-1/2 -translate-x-1/2 z-100 w-2/3 md:w-1/3 h-15">
-        <div className="relative flex h-full items-center justify-between px-4 rounded-2xl border  border-white/30 bg-white/20 shadow-[0_9px_32px_rgba(0,0,0,0.1)] backdrop-blur-lg">
+      <nav className="fixed left-1/2 top-5 z-100 h-15 w-[calc(100%-2rem)] max-w-7xl -translate-x-1/2">
+        <div className="relative flex h-full items-center justify-between rounded-2xl border border-white/30 bg-white/20 px-4 shadow-[0_9px_32px_rgba(0,0,0,0.1)] backdrop-blur-lg lg:rounded-none lg:border-0 lg:bg-transparent lg:shadow-none lg:backdrop-blur-none">
           <Link
             href="/"
             onClick={() => setOpen(false)}
-            className={`text-xl uppercase font-bold ${open ? "text-[#f6f0ec]" : "text-[#361e13]"} ${fjalla.className}`}
+            className={`text-3xl uppercase font-bold  ${fjalla.className}`}
           >
             Oasis.
           </Link>
-          {/* HAMBURGER */}
-
+          <div className="hidden items-center gap-12 lg:flex">
+            {navigationLinks.map((link) => (
+              <Link
+                key={link.title}
+                href={link.url}
+                className="text-lg font-medium text-[#361e13] transition-opacity hover:opacity-60"
+              >
+                {navigationLabels[link.title] ?? link.title}
+              </Link>
+            ))}
+          </div>
           <button
             type="button"
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
             onClick={() => setOpen((prev) => !prev)}
-            className="relative z-110 w-7 h-5 flex flex-col justify-center cursor-pointer"
+            className="relative z-110 flex h-5 w-7 cursor-pointer flex-col justify-center lg:hidden"
           >
             <motion.span
               animate={open ? "opened" : "closed"}
@@ -78,9 +93,7 @@ export default function Navbar() {
                 duration: 0.3,
                 ease: "easeInOut",
               }}
-              className={`absolute w-7 h-1 rounded-full transition-colors duration-300 ${
-                open ? "bg-[#f6f0ec]" : "bg-[#361e13]"
-              }`}
+              className="absolute h-1 w-7 rounded-full bg-[#361e13]"
             />
 
             <motion.span
@@ -100,82 +113,46 @@ export default function Navbar() {
                 duration: 0.3,
                 ease: "easeInOut",
               }}
-              className={`absolute w-7 h-1 rounded-full transition-colors duration-300 ${
-                open ? "bg-[#f6f0ec]" : "bg-[#361e13]"
-              }`}
+              className="absolute h-1 w-7 rounded-full bg-[#361e13]"
             />
           </button>
         </div>
-      </nav>
-
-      <AnimatePresence>
-        {open && (
-          <motion.div
-            initial={{
-              y: "-100%",
-            }}
-            animate={{
-              y: "0%",
-            }}
-            exit={{
-              y: "100%",
-            }}
-            transition={{
-              duration: 0.8,
-              ease: [0.76, 0, 0.24, 1],
-            }}
-            className="fixed top-0 left-0 right-0 bottom-0 z-90 bg-[#361e13]"
-          >
-            <div className="w-full h-full flex items-center justify-center">
+        <AnimatePresence>
+          {open && (
+            <motion.div
+              initial={{ opacity: 0, y: -10, scale: 0.98 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: -8, scale: 0.98 }}
+              transition={{ duration: 0.22, ease: "easeOut" }}
+              className="absolute right-0 top-[calc(100%+0.75rem)] z-90 w-[min(42rem,calc(60vw-3rem))] md:w-[min(42rem,calc(40vw-3rem))] overflow-hidden border border-[#272321] shadow-xl lg:hidden"
+            >
+             
               <motion.div
                 variants={menuLinks}
                 initial="closed"
                 animate="opened"
-                className="group/links flex flex-col items-center gap-4"
+                className="bg-[#f6f0ec] px-5 py-2"
               >
                 {navigationLinks.map((link) => (
                   <motion.div
                     key={link.title}
                     variants={menuLink}
-                    className="group relative"
+                    className="border-b border-[#361e13]/15 last:border-b-0"
                   >
                     <Link
                       href={link.url}
                       onClick={() => setOpen(false)}
-                      className="text-[#f6f0ec] text-6xl md:text-8xl uppercase font-medium transition-opacity duration-300 group-hover/links:opacity-40 hover:opacity-100!"
+                      className="block py-3 text-xl font-medium text-center text-[#361e13] transition-opacity hover:opacity-60 sm:text-2xl"
                     >
-                      {link.title}
-                      <motion.div
-                        initial={{
-                          opacity: 0,
-                          scale: 0.8,
-                          y: 20,
-                        }}
-                        whileHover={{
-                          opacity: 1,
-                          scale: 1,
-                          y: 0,
-                        }}
-                        transition={{
-                          duration: 0.4,
-                          ease: [0.22, 1, 0.36, 1],
-                        }}
-                        className="pointer-events-none absolute left-full top-1/2 ml-8 -translate-y-1/2 w-56 h-72 overflow-hidden rounded-xl"
-                      >
-                        <img
-                          src={link.image}
-                          alt=""
-                          className="w-full h-full object-cover"
-                        />
-                      </motion.div>
+                      {navigationLabels[link.title] ?? link.title}
                     </Link>
                   </motion.div>
                 ))}
               </motion.div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </nav>
     </>
   );
 }

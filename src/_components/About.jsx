@@ -15,7 +15,7 @@ export default function About() {
   const headingWords = heading.split(/\s+/);
 
   return (
-    <section className="flex min-h-screen w-full items-center justify-center px-4">
+    <section className="relative z-10 mt-[-100svh] flex min-h-screen w-full items-center justify-center bg-[#f8eee9] px-4">
       <motion.div className="flex w-full flex-col items-center gap-12 py-10 text-center">
         <div
           ref={dialogRef}

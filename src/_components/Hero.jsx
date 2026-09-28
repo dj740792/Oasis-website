@@ -24,9 +24,9 @@ const Hero = () => {
     <section
       ref={sectionRef}
       aria-label="Studio Oasis"
-      className="w-full  h-full px-4 pt-28  md:px-4 md:pt-28 md:pb-6"
+      className="relative z-0 h-[200svh] w-full px-4 pt-28 md:px-4 md:pt-28 md:pb-6"
     >
-      <div className="relative flex  h-screen lg:h-[130vh] min-h-136 w-full items-center justify-center overflow-hidden">
+      <div className="sticky top-0 flex h-screen min-h-136 w-full items-center justify-center overflow-hidden">
         <video
           src="/video/hero.mp4"
           autoPlay
@@ -48,17 +48,6 @@ const Hero = () => {
           >
             OASIS
           </motion.h1>
-          <motion.h2
-            style={{
-              y: subHeadY,
-              scale: logoScale,
-              transform: "none",
-            }}
-            className=" text-lg lg:text-2xl text-center max-w-2xl"
-          >
-            Designing spaces that tell your unique story. Beautifully crafted,
-            tailored for life.
-          </motion.h2>
         </div>
       </div>
     </section>
