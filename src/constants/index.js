@@ -79,7 +79,8 @@ export const projects = [
     year: "2024",
     src: "/photos/restraunt/restraunt1.jpg",
     aspect: "h-84 md:h-auto md:aspect-square",
-    gridClass: "col-span-12 md:col-span-3 md:col-start-10 md:row-start-2 self-end",
+    gridClass:
+      "col-span-12 md:col-span-3 md:col-start-10 md:row-start-2 self-end",
     description:
       "To craft an unforgettable culinary setting, we highlighted the venue's double-height volumes with custom brushed-brass accents, hand-cut stone surfaces, and sculptural dining chairs. The lighting scheme shifts throughout the evening to continuously refine the drama of the room.",
     gallery: [
@@ -133,8 +134,7 @@ export const projects = [
     year: "2025",
     src: "/photos/villa/villa1.jpg",
     aspect: "h-84 md:h-auto md:aspect-[4/5]",
-    gridClass:
-      "col-span-12 md:col-span-4 md:col-start-5 md:row-start-4",
+    gridClass: "col-span-12 md:col-span-4 md:col-start-5 md:row-start-4",
     description:
       "A dialogue between regional heritage and modern spatial design. We integrated locally quarried stone masonry, central water courtyards, and handcrafted teak woodwork to anchor the villa into the landscape, producing a grounded retreat that glows under the evening sun.",
     gallery: [
@@ -145,7 +145,6 @@ export const projects = [
     ],
   },
 ];
-
 
 export const heroImages = [
   { src: "/heroImgs/img1.jpg", height: "h-[40vh] md:h-[30vh]" },
@@ -162,22 +161,26 @@ export const serviceList = [
   {
     title: "Building & Site Design",
     description:
-      "Planning and designing complete structures from the ground up, tailored to the land and surroundings.",
+      "We shape site plans and building concepts around the land, climate, local context, and your goals. From early feasibility through spatial planning, we create a clear foundation for a functional, lasting structure.",
+    image:"/serviceImgs/serviceImg1.jpg"
   },
   {
     title: "Interior Design & Renovation",
     description:
-      "Transforming indoor layouts, finishes, and features for homes, offices, and retail spaces.",
+      "We refine layouts, lighting, surfaces, and finishes so each room feels cohesive and works naturally day to day. Renovation decisions are coordinated around the architecture, budget, and the way you use the space.",
+      image:"/serviceImgs/serviceImg2.jpg"
   },
   {
     title: "Furniture & Decor Styling",
     description:
-      "Selecting custom furniture, lighting, artwork, and materials to complete the look of your space.",
+      "We select and layer furniture, lighting, textiles, artwork, and finishes to bring each room together. Every piece is chosen for scale, comfort, durability, and how it supports the wider interior.",
+      image:"/serviceImgs/serviceImg3.jpg"
   },
   {
     title: "Project Guidance & Supervision",
     description:
-      "Overseeing site progress, coordinating contractors, and ensuring design details.",
+      "We coordinate contractors, review progress against the design, and help resolve site questions as they arise. Regular oversight keeps decisions clear and details consistent from the first works through final handover.",
+      image:"/serviceImgs/serviceImg4.jpg"
   },
 ];
 
