@@ -43,11 +43,6 @@ export default function Services() {
             Transforming quiet ideas into physical presence.
           </motion.h2>
 
-          <p className="text-sm font-semibold leading-relaxed text-[#695349] md:text-sm lg:max-w-xl lg:text-lg xl:text-xl">
-            Our mission is to translate your ambition into tangible spaces. We
-            offer a range of specialized spatial design services tailored to
-            craft your unique environment.
-          </p>
         </div>
         {/* MIDDLE COL */}
         <motion.div
