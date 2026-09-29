@@ -25,25 +25,25 @@ export default function Services() {
   const height = useTransform(
     scrollYProgress,
     [0, 0.5],
-    isMobile ? ["60vh", "80vh"] : ["60vh", "90vh"],
+    isMobile ? ["0vh", "80vh"] : ["0vh", "90vh"],
   );
 
   return (
-    <section ref={ref} className="w-full  py-10 md:py-24 px-6 md:px-12 ">
-      <div className="max-w-8xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16 items-start ">
+    <section ref={ref} className="w-full py-10 md:py-24 px-6 md:px-12">
+      <div className="max-w-8xl mx-auto flex flex-col gap-10 md:flex-row md:items-start md:gap-6 lg:gap-8">
         {/*  LEFT COL */}
-        <div className="md:col-span-1 flex flex-col gap-8 ">
+        <div className="flex min-w-0 flex-col gap-5 md:w-[29%] md:shrink-0 lg:gap-8">
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: [0.25, 1, 0.5, 1] }}
-            className="text-4xl  lg:text-5xl font-bold tracking-tight leading-[1.1]"
+            className="text-3xl font-bold tracking-tight leading-[1.1] lg:text-5xl"
           >
             Transforming quiet ideas into physical presence.
           </motion.h2>
 
-          <p className="text-md lg:text-lg xl:text-xl text-[#695349] font-semibold leading-relaxed max-w-md">
+          <p className="text-sm font-semibold leading-relaxed text-[#695349] md:text-sm lg:max-w-xl lg:text-lg xl:text-xl">
             Our mission is to translate your ambition into tangible spaces. We
             offer a range of specialized spatial design services tailored to
             craft your unique environment.
@@ -52,27 +52,25 @@ export default function Services() {
         {/* MIDDLE COL */}
         <motion.div
           style={{ height }}
-          transition={{
-            ease: "easeOut",
-          }}
-          className="md:col-span-1.5  md:h-full relative overflow-hidden "
+          transition={{ ease: "easeOut" }}
+          className="relative w-full shrink-0 overflow-hidden md:w-[30%]"
         >
           <Image
             src="/heroImgs/img2.jpg"
             alt="Interior design details showing spatial depth"
             fill
             className="object-cover"
-            sizes="(max-width: 768px) 100vw, 40vw"
+            sizes="(max-width: 1023px) 100vw, 33vw"
           />
         </motion.div>
         {/* RIGHT COL */}
-        <div className="md:col-span-1.5 flex flex-col gap-8 lg:gap-14">
+        <div className="flex min-w-0 flex-1 flex-col gap-5 md:h-[80vh] md:gap-4 lg:h-[90vh] lg:gap-6">
           <div className="border-b pb-2">
-            <motion.h1 className="text-4xl lg:text-5xl font-extrabold tracking-tight leading-[0.9]">
+            <motion.h1 className="text-2xl font-extrabold tracking-tight leading-[0.9] lg:text-4xl">
               Our Services
             </motion.h1>
           </div>
-          <div className="flex flex-col gap-10">
+          <div className="flex flex-col gap-4 md:gap-3 lg:gap-5">
             {serviceList.map((service, index) => (
               <motion.div
                 key={index}
@@ -84,12 +82,12 @@ export default function Services() {
                   delay: index * 0.15,
                   ease: [0.25, 1, 0.5, 1],
                 }}
-                className="flex flex-col gap-2 group"
+                className="flex flex-col gap-1.5 group"
               >
-                <h3 className="text-xl  lg:text-3xl font-semibold tracking-normal  transition-colors">
+                <h3 className="text-base font-semibold tracking-normal transition-colors md:text-lg lg:text-2xl">
                   {service.title}
                 </h3>
-                <p className="text-md lg:text-lg opacity-80 font-semibold leading-relaxed max-w-md">
+                <p className="text-xs font-semibold leading-snug opacity-80 md:text-sm lg:text-base">
                   {service.description}
                 </p>
               </motion.div>

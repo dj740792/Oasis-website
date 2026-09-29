@@ -21,7 +21,7 @@ export default function About() {
           ref={dialogRef}
           className="mx-auto w-full overflow-hidden leading-[1.3] md:max-w-6xl md:px-12"
         >
-          <motion.h2 className="flex flex-wrap justify-center gap-y-1 text-center text-4xl font-semibold leading-none tracking-wider md:text-5xl lg:text-6xl">
+          <motion.h2 className="flex flex-wrap justify-center gap-y-1 text-center text-4xl font-semibold leading-none tracking-wider md:text-5xl lg:text-5xl xl:text-6xl">
             {headingWords.map((word, wordIndex) => (
               <span
                 key={wordIndex}
