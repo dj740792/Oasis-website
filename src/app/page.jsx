@@ -12,9 +12,9 @@ export default function page() {
     <main className="relative w-full min-h-screen">
       <Hero />
       <About />
-      <Services />
-      <Process />
       <Works />
+       <Process />
+      <Services />   
       <Testimonials />
       <Cta />
     </main>
